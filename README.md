@@ -8,7 +8,7 @@ This is my humble portfolio where I will keep my projects and more things to com
     
  Felipe Rey
 
-* [Portfolio](https://katherineoelsner.com/)
+* [Portfolio](https://felipereyr.github.io/Portfolio/)
 
 * [Linkedin](https://www.linkedin.com/in/felipe-r-408406250/)
 
