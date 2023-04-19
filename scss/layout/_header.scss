@@ -1,0 +1,118 @@
+@use 'global/variables' as v;
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__logo{
+        width: 12rem;
+
+        @media screen and (min-width: 480px){
+            width: 13rem;
+        }
+
+        @media screen and (min-width: 600px){
+            width: 14rem;
+        }
+
+        @media screen and (min-width: 960px){
+            width: 15rem;
+        }
+
+        @media screen and (min-width: 1200px){
+           width: 16rem;
+        }
+
+    }
+
+    &__nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        @media screen and (min-width: 480px){
+            gap: 3rem;
+        }
+
+        @media screen and (min-width: 600px){
+            gap: 4rem;
+        }
+
+        @media screen and (min-width: 850px){
+            gap: 5rem;
+        }
+
+        @media screen and (min-width: 1250px){
+            gap: 8rem;
+        }
+
+
+        
+    }
+
+    &__btn{
+        display: flex;
+        gap: 2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__a{
+        font-size: 1.2rem;
+        color: v.$black;
+        font-family: v.$poppins;
+        font-weight: 500;
+        position: relative;
+        transform: all 200ms ease;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(v.$mainAzul, v.$bkAzul);
+            bottom: -0.3rem;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover::before{
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        @media screen and (min-width: 768px){
+            font-size: 1.6rem;
+        }
+
+        @media screen and (min-width: 1024px){
+            font-size: 1.8rem;
+        }
+
+        &--linke{
+            color: v.$white;
+            padding: 1rem 3rem;
+            background: linear-gradient(125deg, v.$mainAzul, v.$bkAzul);
+            border-radius: 2px;
+            text-transform: uppercase;
+           
+            @media screen and (min-width: 768px){
+                padding: 1rem 2rem;
+            }
+
+            &:hover{
+                background: linear-gradient(125deg, grey, v.$bkAzul);
+            }
+
+            &:hover::before{
+                transform-origin: left;
+                transform: scaleX(0);
+            }
+        }
+
+    }
+}

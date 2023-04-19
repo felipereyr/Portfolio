@@ -1,0 +1,712 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;700&display=swap"); /* Reseteamos los margin y paddings de todas las etiquetas */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before, *::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header__logo {
+  width: 12rem;
+}
+@media screen and (min-width: 480px) {
+  .header__logo {
+    width: 13rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .header__logo {
+    width: 14rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .header__logo {
+    width: 15rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header__logo {
+    width: 16rem;
+  }
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+@media screen and (min-width: 480px) {
+  .header__nav {
+    gap: 3rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .header__nav {
+    gap: 4rem;
+  }
+}
+@media screen and (min-width: 850px) {
+  .header__nav {
+    gap: 5rem;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .header__nav {
+    gap: 8rem;
+  }
+}
+.header__btn {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.header__a {
+  font-size: 1.2rem;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  position: relative;
+  transform: all 200ms ease;
+}
+.header__a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(#266078, #131B24);
+  bottom: -0.3rem;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.header__a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+@media screen and (min-width: 768px) {
+  .header__a {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__a {
+    font-size: 1.8rem;
+  }
+}
+.header__a--linke {
+  color: #ffffff;
+  padding: 1rem 3rem;
+  background: linear-gradient(125deg, #266078, #131B24);
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .header__a--linke {
+    padding: 1rem 2rem;
+  }
+}
+.header__a--linke:hover {
+  background: linear-gradient(125deg, grey, #131B24);
+}
+.header__a--linke:hover::before {
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.bk {
+  background: url("/img/bkHome.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .home {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home {
+    gap: 10rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home {
+    gap: 20rem;
+  }
+}
+.home__home {
+  display: flex;
+  flex-direction: column;
+}
+.home__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .home__text {
+    margin-top: 0rem;
+    width: 30rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home__text {
+    width: 40rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home__text {
+    width: 60rem;
+  }
+}
+.home__h2 {
+  font-size: 2.6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+}
+@media screen and (min-width: 1024px) {
+  .home__h2 {
+    font-size: 3.4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home__h2 {
+    font-size: 4rem;
+  }
+}
+.home__span {
+  font-size: 3.6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+@media screen and (min-width: 1024px) {
+  .home__span {
+    font-size: 4.4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home__span {
+    font-size: 6.4rem;
+  }
+}
+.home__p {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  margin: 0rem 3rem;
+}
+@media screen and (min-width: 768px) {
+  .home__p {
+    margin: 0rem;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home__p {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home__p {
+    font-size: 1.6rem;
+  }
+}
+.home__a {
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  background: linear-gradient(125deg, #266078, #000000);
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.home__a:hover {
+  background: linear-gradient(125deg, grey, #131B24);
+}
+@media screen and (min-width: 1024px) {
+  .home__a {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home__a {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .home__a {
+    margin-top: 1rem;
+  }
+}
+.home__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0rem 3rem 0rem;
+}
+@media screen and (min-width: 768px) {
+  .home__photo {
+    margin: 5rem 0rem 8rem 0rem;
+  }
+}
+.home__img {
+  width: 20rem;
+}
+@media screen and (min-width: 768px) {
+  .home__img {
+    width: 15rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .home__img {
+    width: 20rem;
+  }
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .about__content {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about__content {
+    gap: 10rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about__content {
+    gap: 20rem;
+  }
+}
+.about__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .about__text {
+    margin: 5rem 0rem 8rem 0rem;
+    width: 30rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about__text {
+    width: 40rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about__text {
+    margin: 6rem 0rem 8rem 0rem;
+    width: 60rem;
+  }
+}
+.about__h2 {
+  font-size: 3.6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0rem 3rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .about__h2 {
+    width: 40rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about__h2 {
+    font-size: 4.4rem;
+    text-align: center;
+    width: 45rem;
+  }
+}
+.about__span {
+  color: #266078;
+}
+.about__p {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  margin: 0rem 3rem;
+}
+@media screen and (min-width: 768px) {
+  .about__p {
+    margin: 0rem 0rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about__p {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about__p {
+    font-size: 1.6rem;
+  }
+}
+.about__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0rem 5rem 0rem;
+}
+@media screen and (min-width: 768px) {
+  .about__photo {
+    margin: 5rem 0rem 8rem 0rem;
+  }
+}
+.about__img {
+  width: 20rem;
+}
+@media screen and (min-width: 768px) {
+  .about__img {
+    width: 20rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .about__img {
+    width: 25rem;
+  }
+}
+
+.portfolio {
+  background-color: #131B24;
+}
+.portfolio__h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #000000;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+@media screen and (min-width: 1024px) {
+  .portfolio__h3 {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio__h3 {
+    font-size: 5rem;
+  }
+}
+.portfolio__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 4rem;
+}
+.portfolio__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px;
+}
+.portfolio__box--mt {
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+}
+.portfolio__img {
+  width: 15rem;
+  height: 8rem;
+  background: url("/img/project1.webp");
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #266078;
+}
+.portfolio__img--2 {
+  background: url("/img/project2.webp");
+  background-size: cover;
+  background-position: center;
+}
+.portfolio__img--3 {
+  background: url("/img/project3.webp");
+  background-size: cover;
+  background-position: center;
+}
+.portfolio__img--4 {
+  background: url("/img/coming.webp");
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (min-width: 768px) {
+  .portfolio__img {
+    width: 20rem;
+    height: 10rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .portfolio__img {
+    width: 30rem;
+    height: 20rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio__img {
+    width: 35rem;
+    height: 25rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .portfolio__img {
+    width: 60rem;
+    height: 30rem;
+  }
+}
+.portfolio__span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 0.5rem 0rem 1rem 0rem;
+}
+@media screen and (min-width: 1024px) {
+  .portfolio__span {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio__span {
+    font-size: 2.6rem;
+  }
+}
+.portfolio__a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  background: linear-gradient(125deg, #266078, #000000);
+  border: 2px;
+}
+.portfolio__a:hover {
+  background: linear-gradient(125deg, grey, #131B24);
+}
+@media screen and (min-width: 1024px) {
+  .portfolio__a {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .portfolio__a {
+    font-size: 1.6rem;
+  }
+}
+
+.contact {
+  background: url("/img/bkContact.webp");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact__form {
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 500px) {
+  .contact__form {
+    width: 45rem;
+    margin-top: 8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact__form {
+    width: 55rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact__form {
+    width: 70rem;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact__form {
+    width: 80rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .contact__form {
+    width: 90rem;
+  }
+}
+.contact__h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #000000;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+@media screen and (min-width: 1024px) {
+  .contact__h3 {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact__h3 {
+    font-size: 5rem;
+  }
+}
+.contact__input {
+  background-color: #ffffff;
+  width: 40%;
+  height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__input {
+    width: 55%;
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact__input {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact__input {
+    width: 75%;
+  }
+}
+.contact__input--btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  height: 6rem;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  background: linear-gradient(125deg, #266078, #000000);
+  border: 2px;
+  text-align: center;
+}
+.contact__input--btn:hover {
+  background: linear-gradient(125deg, grey, #131B24);
+}
+.contact__a {
+  opacity: 0;
+}

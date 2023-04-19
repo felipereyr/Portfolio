@@ -1,0 +1,101 @@
+@use 'global/variables' as v;
+
+.contact{
+    background: url('/img/bkContact.webp');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    &__form{
+        width: 35rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+
+        @media screen and (min-width: 500px){
+            width: 45rem;
+            margin-top: 8rem;
+        }
+
+        @media screen and (min-width: 768px){
+            width: 55rem;
+        }
+
+        @media screen and (min-width: 1024px){
+            width: 70rem;
+            gap: 2rem;
+        }
+
+        @media screen and (min-width: 1200px){
+            width: 80rem;
+        }
+
+        @media screen and (min-width: 1400px){
+            width: 90rem;
+        }
+    }
+
+    &__h3{
+        font-family: v.$roboto;
+        font-weight: 400;
+        font-size: 3rem;
+        text-align: center;
+        color: v.$black;
+        text-shadow:
+        -1px -1px 0 #fff,  
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+    
+        @media screen and (min-width: 1024px){
+            font-size: 4rem;
+        }
+        @media screen and (min-width: 1200px){
+            font-size: 5rem;
+        }
+    }
+
+    &__input{
+        background-color: v.$white;
+        width: 40%;
+        height: 2rem;
+
+        @media screen and (min-width: 768px){
+            width: 55%;
+            font-size: 2rem;
+        }
+
+        @media screen and (min-width: 1024px){
+            width: 65%;
+        }
+
+        @media screen and (min-width: 1200px){
+            width: 75%;
+        }
+
+        &--btn{
+            font-family: v.$poppins;
+            font-weight: 500;
+            height: 6rem;
+            color: v.$white;
+            padding: 1rem 3rem;
+            background: linear-gradient(125deg, v.$mainAzul, v.$black);
+            border: 2px;
+            text-align: center;
+
+            &:hover{
+                background: linear-gradient(125deg, grey, v.$bkAzul);
+            }
+        }
+    }
+
+    &__a{
+        opacity: 0;
+    }
+
+}
