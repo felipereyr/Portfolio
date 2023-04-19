@@ -202,7 +202,7 @@ svg {
 }
 
 .bk {
-  background: url("/img/bkHome.webp");
+  background: url("../img/bkHome.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -526,23 +526,23 @@ svg {
 .portfolio__img {
   width: 15rem;
   height: 8rem;
-  background: url("/img/project1.webp");
+  background: url("../img/project1.webp");
   background-size: cover;
   background-position: center;
   border: 1px solid #266078;
 }
 .portfolio__img--2 {
-  background: url("/img/project2.webp");
+  background: url("../img/project2.webp");
   background-size: cover;
   background-position: center;
 }
 .portfolio__img--3 {
-  background: url("/img/project3.webp");
+  background: url("../img/project3.webp");
   background-size: cover;
   background-position: center;
 }
 .portfolio__img--4 {
-  background: url("/img/coming.webp");
+  background: url("../img/coming.webp");
   background-size: cover;
   background-position: center;
 }
@@ -611,7 +611,7 @@ svg {
 }
 
 .contact {
-  background: url("/img/bkContact.webp");
+  background: url("../img/bkContact.webp");
   background-size: cover;
   display: flex;
   flex-direction: column;
